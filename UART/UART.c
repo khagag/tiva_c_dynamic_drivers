@@ -104,25 +104,30 @@ UART_STATE UART_Init(void){
                 break;
             case 1:
 #ifdef UART_MODUEL_1_MB
+                GPIO_PORTB_DEN_R |= UM_Ptr->MASK;
                 GPIO_PORTB_AFSEL_R |= UM_Ptr->MASK;
                 GPIO_PORTB_PCTL_R |= 0x1<<(3* UM_Ptr->RX) | 0x1 << (3 * UM_Ptr->TX);
 #else
+                GPIO_PORTC_DEN_R |= UM_Ptr->MASK;
                 GPIO_PORTC_AFSEL_R |= UM_Ptr->MASK;
                 GPIO_PORTC_PCTL_R |= 0x2<<(3* UM_Ptr->RX) | 0x2 << (3*UM_Ptr->TX);
 #endif
                 break;
             case 2:
             case 6:
+                GPIO_PORTD_DEN_R |= UM_Ptr->MASK;
                 GPIO_PORTD_AFSEL_R |= UM_Ptr->MASK;
                 GPIO_PORTD_PCTL_R |= 0x1<<(3* UM_Ptr->RX) | 0x1 << (3 * UM_Ptr->TX);
                 break;
             case 3:
             case 4:
+                GPIO_PORTC_DEN_R |= UM_Ptr->MASK;
                 GPIO_PORTC_AFSEL_R |= UM_Ptr->MASK;
                 GPIO_PORTC_PCTL_R |= 0x1<<(3* UM_Ptr->RX) | 0x1 << (3 * UM_Ptr->TX);
                 break;
             case 5:
             case 7:
+                GPIO_PORTE_DEN_R |= UM_Ptr->MASK;
                 GPIO_PORTE_AFSEL_R |= UM_Ptr->MASK;
                 GPIO_PORTE_PCTL_R |= 0x1<<(3* UM_Ptr->RX) | 0x1 << (3 * UM_Ptr->TX);
                 break;
