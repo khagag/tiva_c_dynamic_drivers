@@ -1,1 +1,0 @@
-"./main.obj" "./tm4c123gh6pm_startup_ccs.obj" "./SPI/SPI.obj" "./SPI/SPI_Cnf.obj" "./UART/UART.obj" "./UART/UART_Cnf.obj" "./i2c/i2c.obj" "./i2c/i2c_config.obj" "../tm4c123gh6pm.cmd" -llibc.a 
